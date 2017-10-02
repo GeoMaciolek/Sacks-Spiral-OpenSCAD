@@ -11,7 +11,7 @@
 
 /*
     Settings
-*.
+*/
 
 // Base Width - how large do you want this to be, in mm?
 // base_width=300;
