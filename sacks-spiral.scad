@@ -7,6 +7,9 @@
     An archimedes spiral highlighting prime numbers.  The Sacks Spiral
     is based on the Ulam spiral.
     https://en.wikipedia.org/wiki/Ulam_spiral
+    
+    See README.md for details of creating additional
+    files, such as prime_table.scad etc
 */
 
 /*
@@ -21,14 +24,14 @@ overall_height_ratio=0.1;
 max_num=300; //scale needs fixing for 'width/num ratio'
 
 
+include <prime_table.scad>
+//primes = [0,1,2,3];
+
 //$fn=160; // Circle face number (can be defined per object)
 
 /*
     GLOBALS
 */
-returnPrime=false; // Used as a return in the isPrime "module"
-                   // to emulate a standard C-esque function
-
 
 base_width=max_num; //*0.173; // Happens to work out this way IF max_num is 300. Fiddling?
 
@@ -82,7 +85,9 @@ module arch_spiral() {
         x = cos(theta*(180/PI))*(r*spacing_factor);
         y = sin(theta*(180/PI))*(r*spacing_factor)*-1;
         
-        primeoffset=1;
+        //primeoffset=1
+        primeoffset= isPrime(i) ? 30 : 0;
+            //primeoffset=4;
         // if it's prime, set above to 2
         
         translate([x,y,overall_height])
@@ -117,26 +122,11 @@ module arch_spiral() {
     
 }
 
-module isPrime(num) { // Uses the "global" boolean 'returnPrime' to return value
-    returnPrime=false;
-}
+function isPrime(num) = (
+    // Note: "primes" is loaded from prime_table.scad - see for details
+    search(num,primes) != []
 
-function isPrimeNotWorky(intp) = 
-    intp == 1 ? 1
-    : intp == 2 ? 1
-    : ((intp % 2) == 0) ? 1 : 0;
-
-    
-    /* Python 2.5
-    return not (a < 2 or any(a % x == 0 for x in xrange(2, int(a**0.5) + 1)))
-    
-    some openscad ternary thing:
-    function f(x) = x == 1 ? 42
-                    : x == 2 ? 99 : 0;
-
-    This returns 42 when x is 1, 99 when x = 2 otherwise 0.
-    
-    */
+);
 
 
 /*
