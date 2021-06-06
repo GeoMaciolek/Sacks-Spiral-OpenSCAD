@@ -133,12 +133,13 @@ function isPrime(num) = (
     BEGIN MAIN EXECUTION
 */
 
-base();
+//base();
 
 arch_spiral();
 //middle();
-
+/*
+// test prime table
 for(testy = [1:15]) {
     echo(testy, "is prime? ",isPrime(testy));
 }
-   
+*/
