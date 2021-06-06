@@ -70,7 +70,7 @@ module arch_spiral() {
     dia=base_width/45; // to be set up based on max num.
     spacing_factor=16;
     
-    for(i = [1:max_num]) {        
+    for(i = [0:max_num]) {        
         // time = i / 20 * PI;
         //x= (4 + (20 * time)) * cos(time);
         //y= (4 + (20 * time)) * sin(time);
@@ -83,7 +83,7 @@ module arch_spiral() {
         theta = r * 2 * PI;
 
         x = cos(theta*(180/PI))*(r*spacing_factor);
-        y = sin(theta*(180/PI))*(r*spacing_factor)*-1;
+        y = sin(theta*(180/PI))*(r*spacing_factor);
         
         //primeoffset=1
         primeoffset= isPrime(i) ? 30 : 0;
