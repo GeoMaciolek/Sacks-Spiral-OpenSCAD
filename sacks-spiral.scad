@@ -21,7 +21,7 @@
 // Overall Height Ratio - how much of a 'pancake' vs a soda can? 0.1 = Height is 1/10th the width
 overall_height_ratio=0.1;
 // Max Number - How high do you want to count?
-max_num=300; //scale needs fixing for 'width/num ratio'
+max_num=2500; //scale needs fixing for 'width/num ratio'
 
 
 include <prime_table.scad>
@@ -67,8 +67,8 @@ module middle(base_width=200) {
 module littlespot(x,y,type) { } // TODO
 
 module arch_spiral() {
-    dia=base_width/45; // to be set up based on max num.
-    spacing_factor=16;
+    dia=base_width/60; // to be set up based on max num.
+    spacing_factor=128;
     
     for(i = [0:max_num]) {        
         // time = i / 20 * PI;

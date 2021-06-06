@@ -6,7 +6,7 @@
 ### Settings
 
 start_num=0 # The starting and ending numbers we will search for primes.
-end_num=500 # The first should generally be 0.
+end_num=5000 # The first should generally be 0.
 
 output_file="prime_table.scad"
 
