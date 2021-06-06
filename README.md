@@ -6,6 +6,8 @@ A 3D-Printable Sacks Spiral, a prime spiral variant of the Ulam spiral. OpenSCAD
 
 This OpenSCAD-based Sacks spiral - licensed under the GPL3 - is usable as a stamp, or a general art object. It's a great way of illustrating the patterns behind prime numbers.  The [Sacks spiral](http://www.numberspiral.com/), invented in 1994 by Robert Sacks, is a variant of the [Ulam spiral](https://en.wikipedia.org/wiki/Ulam_spiral), invented in 1963.
 
+![Screenshot of Sacks Spiral](/images/sacks-spiral-5k-v1.png?raw=True "Screenshot of Sacks Spiral")
+
 ## Getting Started
 
 ### Thingiverse object
